@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 3)
 Varias tiendas de ecommerce necesitan realizar una funcionalidad en Go para administrar productos y
@@ -27,5 +29,77 @@ Requerimientos:
 
 */
 
+const (
+	smallProduct  = "small"
+	mediumProduct = "medium"
+	largeProduct  = "large"
+)
+
+type product interface {
+	calculateCost() float64
+}
+type ecommerce interface {
+	total() float64
+	addProduct(p product)
+}
+type Product struct {
+	name        string
+	price       float64
+	typeProduct string
+}
+type SmallProduct struct {
+	product Product
+}
+type MediumProduct struct {
+	product Product
+}
+type LargeProduct struct {
+	product Product
+}
+type Store struct {
+	products []product
+}
+
+func (s SmallProduct) calculateCost() float64 {
+	return s.product.price
+}
+func (m MediumProduct) calculateCost() float64 {
+	return m.product.price * 1.03
+}
+func (l LargeProduct) calculateCost() float64 {
+	return (l.product.price * 1.06) + 2500
+}
+func (s *Store) addProduct(p product) {
+	s.products = append(s.products, p)
+}
+func (s Store) total() (total float64) {
+	for _, product := range s.products {
+		total += product.calculateCost()
+	}
+	return
+}
+func newProduct(name string, typeProduct string, price float64) product {
+	switch typeProduct {
+	case smallProduct:
+		p := Product{name: name, price: price, typeProduct: typeProduct}
+		return SmallProduct{product: p}
+	case mediumProduct:
+		p := Product{name: name, price: price, typeProduct: typeProduct}
+		return MediumProduct{product: p}
+	case largeProduct:
+		p := Product{name: name, price: price, typeProduct: typeProduct}
+		return LargeProduct{product: p}
+	}
+	return nil
+}
+func newStore() ecommerce {
+	return &Store{}
+}
 func main() {
+	meli := newStore()
+	meli.addProduct(newProduct("gafas", smallProduct, 15000.0))
+	meli.addProduct(newProduct("Ventilador", mediumProduct, 135000.0))
+	meli.addProduct(newProduct("Nevera", largeProduct, 1250000.0))
+	meli.addProduct(newProduct("Libreta", smallProduct, 23000.0))
+	fmt.Printf("El costo total es de: %.0f$\n", meli.total())
 }
