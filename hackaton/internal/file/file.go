@@ -39,12 +39,14 @@ func (f *File) Write(tickets []service.Ticket) (err error) {
 	defer file.Close()
 
 	writter := csv.NewWriter(file)
+	_ = os.Truncate(f.Path, 0)
 	for _, ticket := range tickets {
 		register := ticketToString(ticket)
 		if err := writter.Write(register); err != nil {
 			panic(err)
 		}
 	}
+	writter.Flush()
 	return
 }
 

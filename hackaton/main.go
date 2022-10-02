@@ -23,8 +23,8 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	file.Write(booking.ReadAll())
 	fmt.Printf("CREATE\t Se agrego con exito el ticket: %+v\n", ticket)
+
 	//Read ticket
 	id := 5
 	ticket, err = booking.Read(id)
@@ -33,6 +33,7 @@ func main() {
 		return
 	}
 	fmt.Printf("READ\t El ticket con id %d es: %+v\n", id, ticket)
+
 	//update ticket
 	ticket, err = booking.Update(5, service.Ticket{
 		Id:          5,
@@ -46,21 +47,15 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	file.Write(booking.ReadAll())
 	fmt.Printf("UPDATE\t Se actualizo con exito el ticket: %+v\n", ticket)
+
 	//Delete ticket
-	id = 1000
+	id = 995
 	idDeleted, err := booking.Delete(id)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	file.Write(booking.ReadAll())
 	fmt.Printf("DELETE\t Se elimino con exito el ticket con id: %d\n", idDeleted)
-
+	file.Write(booking.ReadAll())
 }
-
-// Funcion para obtener tickets del archivo csv
-// fmt.Printf("usuario 50: %s \t id: %d \n", tickets[49].Name, tickets[49].Id)
-// fmt.Printf("usuario 1000: %s \t id: %d \n", tickets[999].Name, tickets[999].Id)
-// fmt.Println(len(tickets))
