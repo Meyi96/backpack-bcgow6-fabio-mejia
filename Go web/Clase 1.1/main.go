@@ -38,6 +38,9 @@ func getAll(c *gin.Context) {
 		c.JSON(500, gin.H{"error": err})
 	}
 	var users []User
-	json.Unmarshal(file, &users)
+	err = json.Unmarshal(file, &users)
+	if err != nil {
+		c.JSON(500, gin.H{"error": err})
+	}
 	c.JSON(200, gin.H{"users": users})
 }
