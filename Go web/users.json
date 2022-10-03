@@ -1,0 +1,32 @@
+[
+    {
+        "Id":0,
+        "Name":"Andres",
+        "LastName":"Mejia",
+        "Email":"example@mail.com",
+        "Age":23,
+        "Height":191,
+        "Active":true,
+        "CreationDate":"2022-10-03T10:36:56.142414-05:00"
+    },
+    {
+        "Id":0,
+        "Name":"Carla",
+        "LastName":"Lopez",
+        "Email":"carla@mail.com",
+        "Age":19,
+        "Height":162,
+        "Active":true,
+        "CreationDate":"2022-10-03T10:36:56.142417-05:00"
+    },
+    {
+        "Id":0,
+        "Name":"Pedro",
+        "LastName":"Silva",
+        "Email":"pedro@mail.com",
+        "Age":27,
+        "Height":182,
+        "Active":true,
+        "CreationDate":"2022-10-03T10:36:56.142417-05:00"
+    }
+]
