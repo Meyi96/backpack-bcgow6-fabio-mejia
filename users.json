@@ -1,0 +1,52 @@
+[
+ {
+  "Id": 1,
+  "Name": "Andres",
+  "LastName": "Mejia",
+  "Email": "example@mail.com",
+  "Age": 23,
+  "Height": 191,
+  "Active": true,
+  "CreationDate": "2022-10-03T10:36:56.142414-05:00"
+ },
+ {
+  "Id": 2,
+  "Name": "Carla",
+  "LastName": "Lopez",
+  "Email": "carla@mail.com",
+  "Age": 19,
+  "Height": 162,
+  "Active": true,
+  "CreationDate": "2022-10-03T10:36:56.142417-05:00"
+ },
+ {
+  "Id": 3,
+  "Name": "Pedro",
+  "LastName": "Parra",
+  "Email": "pedro@mail.com",
+  "Age": 43,
+  "Height": 182,
+  "Active": true,
+  "CreationDate": "2022-10-03T10:36:56.142417-05:00"
+ },
+ {
+  "Id": 4,
+  "Name": "Robert",
+  "LastName": "Sanchez",
+  "Email": "robert@mail.com",
+  "Age": 45,
+  "Height": 174,
+  "Active": true,
+  "CreationDate": "2022-10-05T14:55:21.817787-05:00"
+ },
+ {
+  "Id": 5,
+  "Name": "Pedro",
+  "LastName": "Perez",
+  "Email": "pedro@mail.com",
+  "Age": 37,
+  "Height": 182,
+  "Active": false,
+  "CreationDate": "2022-10-05T14:57:29.209155-05:00"
+ }
+]
