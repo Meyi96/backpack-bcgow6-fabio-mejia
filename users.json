@@ -12,9 +12,9 @@
  {
   "Id": 2,
   "Name": "Carla",
-  "LastName": "Lopez",
+  "LastName": "Marin",
   "Email": "carla@mail.com",
-  "Age": 19,
+  "Age": 18,
   "Height": 162,
   "Active": true,
   "CreationDate": "2022-10-03T10:36:56.142417-05:00"
@@ -28,5 +28,25 @@
   "Height": 182,
   "Active": true,
   "CreationDate": "2022-10-03T10:36:56.142417-05:00"
+ },
+ {
+  "Id": 4,
+  "Name": "Robert",
+  "LastName": "Sanchez",
+  "Email": "robert@mail.com",
+  "Age": 45,
+  "Height": 174,
+  "Active": true,
+  "CreationDate": "2022-10-06T16:54:34.031387-05:00"
+ },
+ {
+  "Id": 5,
+  "Name": "Pedro",
+  "LastName": "Morales",
+  "Email": "pedro@mail.com",
+  "Age": 32,
+  "Height": 182,
+  "Active": false,
+  "CreationDate": "2022-10-06T16:54:49.972706-05:00"
  }
 ]
