@@ -28,25 +28,5 @@
   "Height": 182,
   "Active": true,
   "CreationDate": "2022-10-03T10:36:56.142417-05:00"
- },
- {
-  "Id": 4,
-  "Name": "Robert",
-  "LastName": "Sanchez",
-  "Email": "robert@mail.com",
-  "Age": 45,
-  "Height": 174,
-  "Active": true,
-  "CreationDate": "2022-10-05T14:55:21.817787-05:00"
- },
- {
-  "Id": 5,
-  "Name": "Pedro",
-  "LastName": "Perez",
-  "Email": "pedro@mail.com",
-  "Age": 37,
-  "Height": 182,
-  "Active": false,
-  "CreationDate": "2022-10-05T14:57:29.209155-05:00"
  }
 ]
