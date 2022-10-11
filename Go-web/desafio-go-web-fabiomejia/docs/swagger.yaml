@@ -1,0 +1,130 @@
+definitions:
+  web.Response:
+    properties:
+      code:
+        type: string
+      data: {}
+      error:
+        type: string
+    type: object
+info:
+  contact:
+    name: API Support
+    url: https://developers.mercadolibre.com.ar/support
+  description: This API Handle MELI Tickets.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://developers.mercadolibre.com.ar/es_ar/terminos-y-condiciones
+  title: MELI Bootcamp API
+  version: "1.0"
+paths:
+  /tickets/getAverage/{dest}:
+    get:
+      description: get average tickets per hour in a country
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: destination
+        in: path
+        name: dest
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.Response'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/web.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Get average tickets per hour in a country
+      tags:
+      - Tickets
+  /tickets/getByCountry/{dest}:
+    get:
+      description: get list a tickets from a country
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: destination
+        in: path
+        name: dest
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.Response'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/web.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Get Ticket by country
+      tags:
+      - Tickets
+  /tickets/getTotalByCountry/{dest}:
+    get:
+      description: get total tickets from a country
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: destination
+        in: path
+        name: dest
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.Response'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/web.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.Response'
+      summary: Get total tickets by country
+      tags:
+      - Tickets
+swagger: "2.0"
