@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Meyi96/backpack-bcgow6-fabio-mejia/Go-testing/Clase2.1/internal/users"
-	"github.com/Meyi96/backpack-bcgow6-fabio-mejia/Go-testing/Clase2.1/pkg/web"
+	"github.com/Meyi96/backpack-bcgow6-fabio-mejia/Go-testing/Clase2.2/internal/users"
+	"github.com/Meyi96/backpack-bcgow6-fabio-mejia/Go-testing/Clase2.2/pkg/web"
 	"github.com/gin-gonic/gin"
 )
 
