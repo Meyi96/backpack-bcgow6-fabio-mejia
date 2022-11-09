@@ -31,11 +31,9 @@ func main() {
 
 	productGroup := router.Group("/users")
 	productGroup.Use(handler.TokenAuthMiddleware)
-	productGroup.GET("/", user.GetAll)
 	productGroup.GET("/:id", user.Get)
 	productGroup.POST("/", user.Store)
 	productGroup.PUT("/:id", handler.IdValidationMiddleware, user.Update)
-	productGroup.DELETE("/:id", handler.IdValidationMiddleware, user.Delete)
 	err := router.Run()
 	if err != nil {
 		log.Fatal(err)

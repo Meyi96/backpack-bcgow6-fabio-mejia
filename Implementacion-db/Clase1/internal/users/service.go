@@ -2,7 +2,6 @@ package users
 
 import (
 	"errors"
-	"time"
 
 	"github.com/Meyi96/backpack-bcgow6-fabio-mejia/Implementacion-db/Clase1/internal/domain"
 )
@@ -32,27 +31,28 @@ func (s *service) Get(id int) (domain.User, error) {
 }
 
 func (s *service) Store(name string, lastName string, email string, age int, height int) (domain.User, error) {
-	creationDate := time.Now()
-	userID, err := s.repository.Store(name, lastName, email, age, height, true, creationDate)
+	id, err := s.repository.Store(name, lastName, email, age, height)
 	if err != nil {
 		err = errors.New("no se pudo crear el usuario")
 		return domain.User{}, err
 	}
-	newUser := domain.User{
-		Id:           userID,
-		Name:         name,
-		LastName:     lastName,
-		Email:        email,
-		Age:          age,
-		Height:       height,
-		Active:       true,
-		CreationDate: time.Now()}
-	return newUser, err
+	user, err := s.repository.Get(id)
+	if err != nil {
+		return domain.User{}, err
+	}
+	return user, err
 }
 
 func (s *service) Update(id int, name string, lastName string, email string, age int, height int, active bool) (domain.User, error) {
-	//return s.repository.Update(id, name, lastName, email, age, height, active)
-	return domain.User{}, nil
+	err := s.repository.Update(id, name, lastName, email, age, height, active)
+	if err != nil {
+		return domain.User{}, err
+	}
+	user, err := s.repository.Get(id)
+	if err != nil {
+		return domain.User{}, err
+	}
+	return user, nil
 }
 
 func (s *service) Delete(id int) error {
